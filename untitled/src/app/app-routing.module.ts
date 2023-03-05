@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardCustomerComponent },
-  { path: 'mod', component: BoardRentalComponent },
+  { path: 'customer', component: BoardCustomerComponent },
+  { path: 'rental', component: BoardRentalComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
