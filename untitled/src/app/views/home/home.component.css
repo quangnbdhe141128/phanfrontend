@@ -1,0 +1,12 @@
+.fix_position_home {
+  padding-left: 0.8rem;
+}
+.fix_image{
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+.position_three_image{
+  top: -0.2rem;
+  left: -8.2rem;
+}

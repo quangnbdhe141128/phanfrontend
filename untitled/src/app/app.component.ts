@@ -7,6 +7,8 @@ import { TokenStorageService } from './_services/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+
   private roles: string[] | undefined;
   isLoggedIn = false;
   showAdminBoard = false;
@@ -40,4 +42,6 @@ export class AppComponent implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
+
 }
