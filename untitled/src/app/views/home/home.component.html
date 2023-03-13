@@ -1,3 +1,4 @@
+<div *ngIf="!submitted">
 <section class="vh-100 home-img">
   <div class="container py-5 h-100 form_common">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -10,6 +11,7 @@
                 <input
                   type="text"
                   class="form-control fs-3"
+                  [(ngModel)]="home.location"
                   placeholder="Nhập địa điểm mà bạn muốn đến"
                 />
               </div>
@@ -19,6 +21,7 @@
                   <input
                     type="date"
                     class="form-control fs-3"
+                    [(ngModel)]="home.fromDate"
                     placeholder="Ngày đi"
                   />
                 </div>
@@ -27,11 +30,12 @@
                   <input
                     type="date"
                     class="form-control fs-3"
+                    [(ngModel)]="home.toDate"
                     placeholder="Ngày đến"
                   />
                 </div>
               </div>
-              <button
+              <button (click)="saveTutorial()"
                 class="btn btn-outline-light btn-lg px-5 position-relative fs-3"
                 type="submit"
               >
@@ -41,11 +45,27 @@
                 ></i>
               </button>
             </div>
-            <div class="position-absolute d-flex flex-column position_three_image gap-1">
-              <a href=""><img class="fix_image" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-cap-2-3.jpg" alt=""></a>
-              <a href=""><img class="fix_image" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-cap-2-3.jpg" alt=""></a>
-              <a href=""><img class="fix_image" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-cap-2-3.jpg" alt=""></a>
-
+            <div class="">
+              <div class="form-check">
+                <input class="form-check-input" type="radio"
+                       [(ngModel)]="home.vehicleType.value" name="gob" value="1"
+                       />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Ô to
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                 Xe máy
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Xe đạp
+                </label>
+              </div>
             </div>
           </div>
         </div>

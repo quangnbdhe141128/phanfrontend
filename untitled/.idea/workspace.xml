@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="95f23284-df22-4e32-b0c8-2e793446b624" name="Changes" comment="" />
+    <list default="true" id="95f23284-df22-4e32-b0c8-2e793446b624" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/_services/home.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dto/home.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/home/home.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -23,8 +39,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/quang/Desktop/gghghgh/bokar-fe",
+    "last_opened_file_path": "C:/Users/quang/Desktop/bokar_project_nhom/g19-bokar/untitled",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\quang\\Desktop\\bokar_project_nhom\\g19-bokar\\untitled\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -52,6 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678687160547</updated>
       <workItem from="1678687164771" duration="29000" />
+      <workItem from="1678718197066" duration="168000" />
+      <workItem from="1678719460564" duration="5137000" />
     </task>
     <servers />
   </component>
