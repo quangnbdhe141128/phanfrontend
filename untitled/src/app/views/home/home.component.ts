@@ -1,24 +1,42 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../_services/user.service';
+import { HomeService } from '../../_services/home.service';
+import {Home} from "../../dto/home";
 
+// @ts-ignore
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  content: string | undefined;
+  home: Home = {
+     location:'',
+    vehicleType: 1,
+    fromDate: '',
+    toDate: '',
+  };
+  submitted = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private homeService: HomeService) { }
+  saveTutorial(): void {
+    const data = {
+      location: this.home.location,
+      vehicleType: this.home.vehicleType,
+      fromDate: this.home.fromDate,
+      toDate: this.home.toDate,
+    };
 
+    this.homeService.create(data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });
+  }
   ngOnInit() {
-    this.userService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );
+
   }
 }
