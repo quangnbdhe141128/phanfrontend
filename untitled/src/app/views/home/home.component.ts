@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
       vehicleType: this.home.vehicleType,
       fromDate: this.home.fromDate,
       toDate: this.home.toDate,
+      minPrice : 0
     };
 
     this.homeService.create(data)
@@ -32,8 +33,7 @@ export class HomeComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.submitted = true;
-        },
-        error: (e) => console.error(e)
+        }
       });
   }
   ngOnInit() {
