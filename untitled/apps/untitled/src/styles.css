@@ -1,0 +1,122 @@
+@import '~bootstrap/dist/css/bootstrap.css'; /* You can add global styles to this file, and also import other style files */
+/*
+--- 01 TYPOGRAPHY SYSTEM
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+- Line heights:
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+- Letter spacing
+-0.5px
+0.75px
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints: #fdf2e9
+#fae5d3
+- Shades:
+#cf711f
+#45260a
+- Accents:
+- Greys:
+#888
+#767676 (lightest grey on #fff)
+#6f6f6f (lightest grey on #fdf2e9)
+#555
+#333
+--- 05 SHADOWS
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+--- 06 BORDER-RADIUS
+default: 9px
+medium: 11px
+--- 07 WHITESPACE
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+/* Common */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+/*:root {*/
+/*  --primary: #057584;*/
+/*}*/
+.text_color {
+  color: #fff;
+}
+/* .suggest_link {
+  opacity: 0.8;
+  text-decoration: none;
+  color: #fff;
+}
+.suggest_link :hover {
+  opacity: 1;
+} */
+.main_color {
+  background-color: #057584;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.8;
+}
+.form_common .suggest_link:link,
+.form_common .suggest_link:visited {
+  opacity: 0.7;
+}
+.form_common .suggest_link:hover,
+.form_common .suggest_link:active {
+  opacity: 1;
+}
+.guest-test {
+  opacity: 0.5;
+}
+.home-img {
+  background-image: url(https://scontent.fhan14-3.fna.fbcdn.net/v/t1.15752-9/334897810_995821968246379_2501582769250814569_n.png?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=ssxDIp3666kAX8x-i2h&_nc_ht=scontent.fhan14-3.fna&oh=03_AdTrJvamvcYHF7UaMuoJRo1BPzKvxPlO-U00U5iTP80ZhA&oe=642ACE2B);
+  background-position: center; /* Center the images */
+  background-repeat: no-repeat; /* Do not repeat the images */
+  background-size: cover;
+  height: 100vh;
+}
+button {
+  border: none;
+}
+.submit_form {
+  background-color: #057584;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  font-size: 1.6rem;
+}
+.button_crud {
+  color: white;
+  background-color: #057584;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+}
