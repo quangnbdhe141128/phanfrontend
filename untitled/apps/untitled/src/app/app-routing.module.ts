@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'customer', component: BoardCustomerComponent },
   { path: 'rental', component: BoardRentalComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: 'bookingCustomer', component: Booking_customerComponent },
+  { path: 'bookingCustomer/:', component: Booking_customerComponent },
   { path: 'bookingInfo', component: Booking_infoComponent },
   { path: 'viewOrder', component: View_orderComponent },
   { path: 'postManageRental', component: Post_manage_rentalComponent },

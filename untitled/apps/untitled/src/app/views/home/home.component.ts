@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../_services/home.service';
 import { Home } from '../../dto/home';
-
+import {Router, RouterModule, Routes} from '@angular/router';
 // @ts-ignore
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService,private router: Router) {}
   saveTutorial(): void {
     const data = {
       location: this.home.location,
@@ -33,7 +33,8 @@ export class HomeComponent implements OnInit {
         console.log(res);
         this.submitted = true;
       },
-    });
+    })
+    this.router.navigate(['/bookingCustomer/:'+data.location]);
   }
   ngOnInit() {}
 }
