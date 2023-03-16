@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <section class="vh-100 home-img form_common">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="main_color text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <h2 class="fw-bold mb-2 text-uppercase fs-1">
+                    Quên mật khẩu
+                  </h2>
+                  <p class="text-white-50 mb-5 guest-test"></p>
+
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="text"
+                      class="form-control fs-3"
+                      placeholder="Tên đăng nhập"
+                    />
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="email"
+                      class="form-control fs-3"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      class="form-control fs-3"
+                      placeholder="Mật khẩu"
+                    />
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      class="form-control fs-3"
+                      placeholder="Nhập lại mật khẩu"
+                    />
+                  </div>
+                  <button
+                    class="btn btn-outline-light btn-lg px-5 mt-md-4 fs-2 mb-5"
+                    type="submit"
+                  >
+                    Xác nhận
+                  </button>
+
+                  <p class="small mb-5 pb-lg-2 mt-5">
+                    <a
+                      class="text_color suggest_link fs-3"
+                      [routerLink]="['/login']"
+                      >Đăng nhập</a
+                    >
+                    <span class="fs-3">hoặc</span>
+                    <a
+                      class="text_color suggest_link fs-3"
+                      [routerLink]="['/register']"
+                      >Đăng ký</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

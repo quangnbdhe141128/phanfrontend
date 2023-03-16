@@ -1,0 +1,82 @@
+.booking_list_customer {
+  max-width: calc(100% - 4.8rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+.search_color {
+  background: #d07d7d;
+  border-radius: 0.5rem;
+}
+.image_vehicle {
+  object-fit: cover;
+  height: 20rem;
+  width: 100%;
+}
+.item_color {
+  background-color: #9fa4a3;
+  border-radius: 0.5rem;
+}
+.tag_price {
+  background-color: white;
+  border-top-left-radius: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  font-weight: 800;
+  color: #057584;
+  position: absolute;
+  right: 0.5rem;
+  top: 18.6rem;
+}
+.vehicle_name {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-left: 1.2rem;
+}
+.vehicle_address {
+  padding-left: 1.2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+.grid_list_booking {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid_group_booking {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+.group_info {
+  padding: 1.2rem 0;
+}
+.btn_search_all {
+  bottom: -8rem;
+  right: 5rem;
+}
+@media (max-width: 1200px) {
+  .grid_list_booking {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .grid_list_booking {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .padding_field {
+    padding: 1.2rem 0;
+  }
+  .margin_field {
+    margin-top: 0.8rem;
+  }
+  .grid_list_booking {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .grid_list_booking {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
