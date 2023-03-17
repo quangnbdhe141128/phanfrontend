@@ -137,14 +137,14 @@
 
 
 
-          <div *ngFor = "let vehicleItem of vehicleItems"  class="list_item item_color d-flex flex-column-reverse justify-content-center  p-2 position-relative">
+          <div class="list_item item_color d-flex flex-column-reverse justify-content-center  p-2 position-relative">
             <div class="group_info">
-              <p class="vehicle_name"> {{vehicleItem.name}}</p>
-              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i> {{vehicleItem.location}}</p>
+              <p class="vehicle_name">{{data.name}}</p>
+              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i> {{data.location}}</p>
             </div>
 
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Lmom4HhPlj086LPKfVS8BdefW6ZYZq5aV0xvb2k_&s" alt="" class="image_vehicle">
-            <p class="tag_price">{{vehicleItem.price}}</p>
+            <p class="tag_price"></p>
           </div>
         </div>
       </div>
