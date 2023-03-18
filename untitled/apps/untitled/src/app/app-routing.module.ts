@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'rental', component: BoardRentalComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'bookingCustomer/:data', component: Booking_customerComponent },
-  { path: 'bookingInfo', component: Booking_infoComponent },
+  { path: 'bookingInfo/:data', component: Booking_infoComponent },
   { path: 'viewOrder', component: View_orderComponent },
   { path: 'postManageRental', component: Post_manage_rentalComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

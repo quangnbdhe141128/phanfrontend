@@ -9,6 +9,7 @@ import {VehicleItem} from "../../dto/vehicleItem";
 import {HomeService} from "../../_services/home.service";
 import { Location } from '@angular/common';
 import {ActivatedRoute} from "@angular/router";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './booking_customer.component.html',
@@ -16,7 +17,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class Booking_customerComponent implements OnInit {
   data: any;
-
+  id: any;
   // location: this.home.location,
   // vehicleType: this.home.vehicleType,
   // fromDate: this.home.fromDate,
@@ -33,13 +34,16 @@ export class Booking_customerComponent implements OnInit {
   fuels:Fuel[]|undefined
   shops:Shop[]|undefined
   vehicleItems:VehicleItem[]|undefined
-  constructor(private vehicleService: VehicleService,private route: ActivatedRoute, private homeService: HomeService
+  constructor(private vehicleService: VehicleService,private route: ActivatedRoute,private router: Router, private homeService: HomeService
               // ,private location: Location
   ) {
     // this.currentUrl = this.location.path();
     // this.encodedUrl = encodeURIComponent(this.currentUrl);
   }
-
+  onItemClicked(item:any) {
+    const data = item
+    this.router.navigate(['/bookingInfo', JSON.stringify(data)]);
+  }
   ngOnInit(): void {
     this.getTypeList();
     this.getSeat();
@@ -47,25 +51,26 @@ export class Booking_customerComponent implements OnInit {
     this.getFuel();
     this.getShop();
     // this.getItem();
-    // const data = {
-    //   location: 'Hà nội',
-    //   vehicleType: 1,
-    //   fromDate: '2023-03-18',
-    //   toDate: '2023-03-19',
-    //   minPrice: 0,
-    // };
-    //
-    // this.homeService.create(data).subscribe({
-    //   next: (res) => {
-    //     console.log(res);
-    //   },
-    // })
-    // console.log(this.encodedUrl);
-    // console.log(this.currentUrl);
     this.route.params.subscribe(params => {
       this.data = JSON.parse(params['data']);
       // sử dụng biến data để hiển thị dữ liệu trong màn hình danh sách
     });
+    const vehicleItems = {
+      location: this.data.location,
+      vehicleType: 1,
+      fromDate: this.data.fromDate,
+      toDate: this.data.toDate,
+      // minPrice: 0,
+      // location: 'Hà Nội',
+      // vehicleType: 1,
+      // fromDate: '2023-03-24',
+      // toDate: '2023-03-25',
+      minPrice: 0,
+    };
+    console.log(vehicleItems.location);
+    this.homeService.create(vehicleItems).subscribe(response => this.vehicleItems = response.data.list);
+    // console.log(this.encodedUrl);
+    // console.log(this.currentUrl);
 
   }
   private getTypeList(){

@@ -37,6 +37,7 @@
           <div class="col-9 col-md-8 col-xl-10">
             <input
               type="date"
+              [(ngModel)]="data.fromDate"
               class="form-control fs-4 padding_field"
             />
           </div>
@@ -82,11 +83,12 @@
       <div class="col-md-4 form-outline form-white margin_field">
         <div class="row align-items-center">
           <div class="col-3 col-md-4 col-xl-2">
-            <label class="form-label fs-4">Ngày về: </label>
+            <label class="form-label fs-4">Ngày đến </label>
           </div>
           <div class="col-9 col-md-8 col-xl-10">
             <input
               type="date"
+              [(ngModel)]="data.toDate"
               class="form-control fs-4 padding_field"
             />
           </div>
@@ -137,14 +139,14 @@
 
 
 
-          <div class="list_item item_color d-flex flex-column-reverse justify-content-center  p-2 position-relative">
+          <div  *ngFor = "let vehicleItem of vehicleItems" class="list_item item_color d-flex flex-column-reverse justify-content-center  p-2 position-relative">
             <div class="group_info">
-              <p class="vehicle_name">{{data.name}}</p>
-              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i> {{data.location}}</p>
+              <p (click)="onItemClicked(vehicleItem.id)" class="vehicle_name">{{vehicleItem.name}}</p>
+              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i>{{vehicleItem.location}} </p>
             </div>
 
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Lmom4HhPlj086LPKfVS8BdefW6ZYZq5aV0xvb2k_&s" alt="" class="image_vehicle">
-            <p class="tag_price"></p>
+            <p class="tag_price">{{vehicleItem.price}}</p>
           </div>
         </div>
       </div>

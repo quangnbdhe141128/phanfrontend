@@ -31,6 +31,9 @@ export class VehicleService {
   getShopVehicleList(data:any): Observable<any>{
     return this.http.get<any>(API_URL + "vehicle/shop", data);
   }
+  getVehicleDetail(data:any,id:any): Observable<any>{
+    return this.http.get<any>(API_URL + "vehicle/details/"+id, data);
+  }
 }
 
 
