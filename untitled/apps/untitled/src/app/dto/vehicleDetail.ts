@@ -1,9 +1,6 @@
 
-
 export class VehicleDetail {
-
-
-  owner?:string;
+  owner?:any;
   // phone?:any;
   // imageList?: string[];
   // color?:any;
@@ -15,9 +12,9 @@ export class VehicleDetail {
   // feedbackList?: FeedbackList[];
   // location?:any;
   // rule?:any;
-  constructor(owner: string) {
-    this.owner=owner;
-  }
+  // constructor(owner: string) {
+  //   this.owner=owner;
+  // }
 }
 
 // export class FeedbackList{
