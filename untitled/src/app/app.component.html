@@ -1,0 +1,97 @@
+<!--<div id="app">-->
+<!--  <nav class="navbar navbar-expand navbar-dark bg-dark">-->
+<!--    <a href="#" class="navbar-brand">bokar</a>-->
+<!--    <ul class="navbar-nav mr-auto" routerLinkActive="active">-->
+<!--      <li class="nav-item">-->
+<!--        <a href="/home" class="nav-link" routerLink="home">Home </a>-->
+<!--      </li>-->
+<!--      <li class="nav-item" *ngIf="showAdminBoard">-->
+<!--        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item" *ngIf="showRentalBoard">-->
+<!--        <a href="/rental" class="nav-link" routerLink="rental">Rental Board</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item" *ngIf="showCustomerBoard">-->
+<!--        <a href="/customer" class="nav-link" routerLink="customer">Customer Board</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" routerLink="register">Sign Up</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" routerLink="login">Login</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">-->
+<!--      <li class="nav-item">-->
+<!--        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a href class="nav-link" (click)="logout()">LogOut</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+<!--  <router-outlet></router-outlet>-->
+<!--</div>-->
+<!-------------------------------- HEADER ----------------------------->
+<div id="app">
+  <div class="header_bokar">
+    <div class="group_system">
+      <div class="group-icon">
+        <a [routerLink]="['/home']">
+          <img alt="icon_bokar" src="../assets/images/icon_bokar.svg"/>
+        </a>
+      </div>
+      <div class="form-outline form-white search_group_header">
+        <input
+          type="text"
+          class="form-control search_header"
+          placeholder="Mã đặt xe"
+        />
+        <i class="fa fa-search search_icon_header"></i>
+      </div>
+      <div class="login_system_group" *ngIf="!isLoggedIn">
+        <a class="login_system" routerLink="login">Đăng nhập</a>
+        <a class="login_system" routerLink="register">Đăng ký</a>
+      </div>
+      <div class="login_system_group" *ngIf="isLoggedIn">
+        <a class="login_system" routerLink="login"></a>
+        <a class="login_system" routerLink="register" (click)="logout()"
+          >Đăng xuất</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="vh-100">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-------------------------------- FOOTER ----------------------------->
+  <footer>
+    <div class="footer_group">
+      <div class="footer_social_link">
+        <i class="fa-brands fa-facebook-f icon_footer"></i>
+        <i class="fa-brands fa-youtube icon_footer"></i>
+        <i class="fa-brands fa-twitter icon_footer"></i>
+        <i class="fa-brands fa-instagram icon_footer"></i>
+      </div>
+      <div class="footer_contact">
+        <div class="phone_footer">
+          <i class="fa-solid fa-phone icon_footer"></i>
+          <a class="footer_text-contact" href="tel:+123456">0931750680</a>
+        </div>
+        <div class="mail_footer">
+          <i class="fa-regular fa-envelope icon_footer"></i>
+          <a
+            class="footer_text-contact icon_footer"
+            href="mailto:someone@example.com"
+            >Bokar@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
