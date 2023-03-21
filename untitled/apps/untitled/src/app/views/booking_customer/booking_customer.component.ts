@@ -57,7 +57,7 @@ export class Booking_customerComponent implements OnInit {
     });
     const vehicleItems = {
       location: this.data.location,
-      vehicleType: 1,
+      vehicleType: this.data.vehicleType,
       fromDate: this.data.fromDate,
       toDate: this.data.toDate,
       // minPrice: 0,

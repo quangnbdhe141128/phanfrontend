@@ -13,6 +13,7 @@
                     class="form-control fs-3"
                     [(ngModel)]="home.location"
                     placeholder="Nhập địa điểm mà bạn muốn đến"
+                    required
                   />
                 </div>
                 <div class="form-outline form-white mb-4 d-flex">
@@ -49,6 +50,8 @@
               <div class="">
                 <div class="form-check">
                   <input
+                    [(ngModel)]="home.vehicleType"
+                    [value]="1"
                     class="form-check-input"
                     type="radio"
                     name="gob"
@@ -60,6 +63,8 @@
                 </div>
                 <div class="form-check">
                   <input
+                    [(ngModel)]="home.vehicleType"
+                    [value]="2"
                     class="form-check-input"
                     type="radio"
                     name="flexRadioDefault"
@@ -71,6 +76,8 @@
                 </div>
                 <div class="form-check">
                   <input
+                    [(ngModel)]="home.vehicleType"
+                    [value]="3"
                     class="form-check-input"
                     type="radio"
                     name="flexRadioDefault"

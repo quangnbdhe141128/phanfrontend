@@ -1,6 +1,6 @@
 export class Home {
   location?: string;
-  vehicleType?: 1;
+  vehicleType?: number;
   fromDate?: any;
   toDate?: any;
   minPrice?: 0;

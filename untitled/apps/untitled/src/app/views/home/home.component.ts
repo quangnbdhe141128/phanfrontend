@@ -13,7 +13,7 @@ import {Router, RouterModule, Routes} from '@angular/router';
 export class HomeComponent implements OnInit {
   home: Home = {
     location: '',
-    vehicleType: 1,
+    vehicleType: parseInt(''),
     fromDate: '',
     toDate: '',
     minPrice:0,
