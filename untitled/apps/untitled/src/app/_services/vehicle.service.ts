@@ -34,6 +34,9 @@ export class VehicleService {
   getVehicleDetail(data:any,id:any): Observable<any>{
     return this.http.get<any>(API_URL + "vehicle/details/"+id, data);
   }
+  createForm(data: any): Observable<any> {
+    return this.http.post(API_URL + 'booking', data, httpOptions);
+  }
 }
 
 
