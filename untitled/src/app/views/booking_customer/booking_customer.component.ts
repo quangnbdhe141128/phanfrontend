@@ -35,10 +35,38 @@ export class Booking_customerComponent implements OnInit {
   shops:Shop[]|undefined
   vehicleItems:VehicleItem[]|undefined
   constructor(private vehicleService: VehicleService,private route: ActivatedRoute,private router: Router, private homeService: HomeService
-              // ,private location: Location
   ) {
-    // this.currentUrl = this.location.path();
-    // this.encodedUrl = encodeURIComponent(this.currentUrl);
+  }
+  searchVehicle(): void {
+    // this.route.params.subscribe(params => {
+    //   this.data = JSON.parse(params['data']);
+    //   // sử dụng biến data để hiển thị dữ liệu trong màn hình danh sách
+    // });
+    const data = {
+      location: this.data.location,
+      vehicleType: this.data.vehicleType,
+      fromDate: this.data.fromDate,
+      toDate: this.data.toDate,
+      minPrice: 0,
+      vehicleCompany:this.data.vehicleCompany,
+      fuel:this.data.fuel,
+      seatType:this.data.seatType
+    };
+    console.log(this.data.location+'dia diem de check')
+    console.log(this.data.fromDate+'from de check')
+    console.log(this.data.toDate+'to de check')
+    console.log(this.data.vehicleCompany+'to de check')
+    this.homeService.create(data).subscribe({
+      next: (res) => {
+        console.log(res);
+    this.homeService.create(data).subscribe(response => {
+      this.vehicleItems = response.data.list
+      console.log(JSON.stringify(data)+'test xem len du lieu chua');
+      console.log(this.vehicleItems);
+    });
+      },
+    })
+    // this.router.navigate(['/bookingCustomer', JSON.stringify(data)]);
   }
   onItemClicked(item:any) {
     const data = item
@@ -53,6 +81,7 @@ export class Booking_customerComponent implements OnInit {
     // this.getItem();
     this.route.params.subscribe(params => {
       this.data = JSON.parse(params['data']);
+      console.log(this.data)
       // sử dụng biến data để hiển thị dữ liệu trong màn hình danh sách
     });
     const vehicleItems = {
@@ -71,7 +100,6 @@ export class Booking_customerComponent implements OnInit {
     this.homeService.create(vehicleItems).subscribe(response => this.vehicleItems = response.data.list);
     // console.log(this.encodedUrl);
     // console.log(this.currentUrl);
-
   }
   private getTypeList(){
     this.vehicleService.getTypeVehicleList(this).subscribe(response => this.vehicleTypes = response.data.list);

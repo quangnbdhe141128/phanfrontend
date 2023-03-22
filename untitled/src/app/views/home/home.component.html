@@ -1,4 +1,4 @@
-<div *ngIf="!submitted">
+<div>
   <section class="vh-100 home-img">
     <div class="container py-5 h-100 form_common">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -16,8 +16,8 @@
                     required
                   />
                 </div>
-                <div class="form-outline form-white mb-4 d-flex">
-                  <div>
+                <div class="form-outline form-white mb-4 d-flex gap-2">
+                  <div class="w-50">
                     <p class="text-start mb-2 fs-3">Ngày đi</p>
                     <input
                       type="date"
@@ -26,7 +26,7 @@
                       placeholder="Ngày đi"
                     />
                   </div>
-                  <div class="ms-4">
+                  <div class="w-50">
                     <p class="text-start mb-2 fs-3">Ngày đến</p>
                     <input
                       type="date"
@@ -36,7 +36,10 @@
                     />
                   </div>
                 </div>
-                <button
+                <div class="form-outline form-white mb-4 d-flex gap-2">
+                  <p class="text-danger mb-2 fs-3" *ngIf="isValid()">{{validateAlert}}</p>
+                </div>
+                <button  [disabled]="isValid()"
                   (click)="saveTutorial()"
                   class="btn btn-outline-light btn-lg px-5 position-relative fs-3"
                   type="submit"
@@ -45,6 +48,7 @@
                   <i
                     class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y fix_position_home"
                   ></i>
+
                 </button>
               </div>
               <div class="">

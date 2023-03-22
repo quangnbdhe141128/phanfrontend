@@ -50,15 +50,28 @@
           type="text"
           class="form-control search_header"
           placeholder="Mã đặt xe"
+          [(ngModel)]="key"
         />
-        <i class="fa fa-search search_icon_header"></i>
+        <i (click)="searchForm()" class="fa fa-search search_icon_header"></i>
       </div>
       <div class="login_system_group" *ngIf="!isLoggedIn">
+<!--        <ul class="navbar-nav mr-auto" routerLinkActive="active">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" routerLink="home">Home </a>-->
+<!--          </li>-->
+<!--          <li class="nav-item" *ngIf="showWaitingTable">-->
+<!--            <a class="nav-link" routerLink="postManageRental">Rental Board</a>-->
+<!--          </li>-->
+<!--        </ul>-->
         <a class="login_system" routerLink="login">Đăng nhập</a>
         <a class="login_system" routerLink="register">Đăng ký</a>
       </div>
       <div class="login_system_group" *ngIf="isLoggedIn">
-        <a class="login_system" routerLink="login"></a>
+        <ul class="navbar-nav mr-auto" routerLinkActive="active">
+          <li class="nav-item" *ngIf="showWaitingTable">
+            <a class="nav-link" routerLink="postManageRental">Rental Board</a>
+          </li>
+        </ul>
         <a class="login_system" routerLink="register" (click)="logout()"
           >Đăng xuất</a
         >

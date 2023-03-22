@@ -25,6 +25,7 @@
               type="text"
               class="form-control fs-4 padding_field"
               placeholder="Hà Nội"
+              [(ngModel)]="data.location"
             />
           </div>
         </div>
@@ -58,7 +59,7 @@
             <!--          </select>-->
 
             <select  class="form-select fs-4 padding_field w-100">
-              <option *ngFor = "let vehicleType of vehicleTypes"[value]="vehicleType.id">{{vehicleType.name}}</option>
+              <option  *ngFor = "let vehicleType of vehicleTypes"[value]="vehicleType.id">{{vehicleType.name}}</option>
 
             </select>
 
@@ -111,19 +112,22 @@
         </div>
         <div class="form-outline form-white mt-3">
           <label class="form-label fs-4 text-white">Hãng xe: </label>
-          <select class="form-select fs-4 padding_field ">
-            <option *ngFor = "let company of companies"[value]="company.id">{{company.name}}</option>
+          <select  [(ngModel)]="data.vehicleCompany" class="form-select fs-4 padding_field ">
+            <option selected value="">Tất cả</option>
+            <option  *ngFor = "let company of companies"[value]="company.id">{{company.name}}</option>
           </select>
         </div>
         <div class="form-outline form-white mt-3">
           <label class="form-label fs-4 text-white">Loại xe: </label>
-          <select class="form-select fs-4 padding_field ">
+          <select [(ngModel)]="data.seatType" class="form-select fs-4 padding_field ">
+            <option selected value="">Tất cả</option>
             <option *ngFor = "let seat of seats"[value]="seat.id">{{seat.name}}</option>
           </select>
         </div>
         <div class="form-outline form-white mt-3">
           <label class="form-label fs-4 text-white">Tiêu thụ nhiên liệu: </label>
-          <select class="form-select fs-4 padding_field">
+          <select  [(ngModel)]="data.fuel" class="form-select fs-4 padding_field">
+            <option selected value="">Tất cả</option>
             <option *ngFor = "let fuel of fuels"[value]="fuel.id">{{fuel.name}}</option>
           </select>
         </div>
@@ -131,7 +135,7 @@
           <label class="form-label fs-4 text-white" for="price">Mức giá: </label>
           <input type="range" id="price" name="vol" min="0" max="100" class="form-range fs-4">
         </div>
-        <button class="main_color btn_search_all submit_form position-absolute">Tìm kiếm</button>
+        <button (click)="searchVehicle()" class="main_color btn_search_all submit_form position-absolute">Tìm kiếm</button>
 
       </div>
       <div class="list_group col-md-9 col-xl-10 col-12">
@@ -142,7 +146,7 @@
           <div  *ngFor = "let vehicleItem of vehicleItems" class="list_item item_color d-flex flex-column-reverse justify-content-center  p-2 position-relative">
             <div class="group_info">
               <p (click)="onItemClicked(vehicleItem.id)" class="vehicle_name">{{vehicleItem.name}}</p>
-              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i>{{vehicleItem.location}} </p>
+              <p class="vehicle_address"><i class="fa-solid fa-location-dot"></i> {{vehicleItem.location}} </p>
             </div>
 
             <img src="../assets/images/{{vehicleItem.urlImage}}" alt="" class="image_vehicle">

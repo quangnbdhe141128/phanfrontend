@@ -7,6 +7,7 @@ import {VehicleDetail} from "../../dto/vehicleDetail";
 import {Home} from "../../dto/home";
 import {FormBooking} from "../../dto/formBooking";
 import {BookingDetail} from "../../dto/bookingDetail";
+import { HttpClient } from '@angular/common/http';
 // @ts-ignore
 // @ts-ignore
 @Component({
@@ -15,9 +16,12 @@ import {BookingDetail} from "../../dto/bookingDetail";
   styleUrls: ['./booking_info.component.css'],
 })
 export class Booking_infoComponent implements OnInit {
-  submitted = false;
   dataTest: any | undefined;
-  key:any|undefined;
+  data:any|undefined;
+  // ---------------------
+
+
+  // --------------------
   formBooking: FormBooking = {
     vehicleId: '',
     name :'',
@@ -29,12 +33,18 @@ export class Booking_infoComponent implements OnInit {
     from:'',
     to:'',
   };
-
+  home: Home = {
+    location: 'hà nội',
+    vehicleType: parseInt('1'),
+    fromDate: '2023-03-22',
+    toDate: '2023-03-24',
+    minPrice:0,
+  };
 
   vehicleDetail:VehicleDetail|any;
  bookingDetail:BookingDetail|any;
-  constructor(private vehicleService: VehicleService,private userService: UserService,private router: Router,private route: ActivatedRoute) {}
-  saveTutorial(): void {
+  constructor(private vehicleService: VehicleService,private userService: UserService,private router: Router,private route: ActivatedRoute,private http: HttpClient) {}
+  submitForm(): void {
     this.route.params.subscribe(params => {
       this.dataTest = JSON.parse(params['data']);
       console.log(this.dataTest+'hihihi')
@@ -50,30 +60,35 @@ export class Booking_infoComponent implements OnInit {
       from:this.formBooking.from,
       to:this.formBooking.to
     };
+    this.vehicleService.createForm(data).subscribe((response: any) => {
+      this.bookingDetail = response.data
+      console.log(JSON.stringify(data));
+      alert(this.bookingDetail.key)
+    });
+
+
+
+  }
+  backNow(): void {
+    const data = {
+      location: this.home.location,
+      vehicleType: this.home.vehicleType,
+      fromDate: this.home.fromDate,
+      toDate: this.home.toDate,
+      minPrice: 0,
+    };
 
     // this.homeService.create(data).subscribe({
     //   next: (res) => {
     //     console.log(res);
-    // this.vehicleService.createForm(data).subscribe(response => this.key = response.data.key);
-    this.vehicleService.createForm(data).subscribe((response: any) => {
-      // this.vehicleDetail = JSON.parse(JSON.stringify((response.data)))
-      this.bookingDetail = response.data
 
-
-    });
-
-
-    this.submitted = true;
-
-    // this.router.navigate(['/viewOrder', JSON.stringify(data)]);
+    this.router.navigate(['/bookingCustomer', JSON.stringify(data)]);
     //   },
     // })
     // this.router.navigate(['/bookingCustomer/:'+data.location]);
-    console.log(JSON.stringify(data));
-    console.log(this.bookingDetail.key)
+
 
   }
-
   ngOnInit():void {
     this.route.params.subscribe(params => {
       this.dataTest = JSON.parse(params['data']);
@@ -91,7 +106,6 @@ export class Booking_infoComponent implements OnInit {
     });
     // this.vehicleDetail.feedbackList=this.feedbackList1
     // this.vehicleService.getVehicleDetail(this,this.dataTest).subscribe(response => this.vehicleDetail =response.data);
-
 
   }
   // async ngOnInit() {

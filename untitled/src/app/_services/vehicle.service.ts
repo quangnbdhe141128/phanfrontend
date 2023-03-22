@@ -37,6 +37,12 @@ export class VehicleService {
   createForm(data: any): Observable<any> {
     return this.http.post(API_URL + 'booking', data, httpOptions);
   }
+  postData(payload: any) {
+    return this.http.post<any>('booking/view', payload);
+  }
+  getBookingDetail(data:any,id:any): Observable<any>{
+    return this.http.get<any>(API_URL + "booking/"+id, data);
+  }
 }
 
 

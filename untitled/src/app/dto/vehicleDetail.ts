@@ -8,7 +8,7 @@ export class VehicleDetail {
   seat?:any;
   featureList?: string[];
   price?:any;
-  totalRun?:any;
+  totalRun?:number;
   feedBackList?: FeedbackList[];
   location?:any;
   rule?:any;
